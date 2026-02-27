@@ -1,0 +1,188 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Job Rejection Alarm</title>
+  <style>
+    @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Crimson+Text:ital,wght@0,400;1,400&display=swap');
+
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    body {
+      width: 280px;
+      background: #0d0505;
+      color: #fff;
+      font-family: 'Crimson Text', Georgia, serif;
+      overflow: hidden;
+    }
+
+    .header {
+      background: linear-gradient(180deg, #1a0505 0%, #0d0505 100%);
+      padding: 20px;
+      text-align: center;
+      border-bottom: 1px solid #3d0f0f;
+      position: relative;
+    }
+
+    .emoji {
+      font-size: 40px;
+      display: block;
+      margin-bottom: 6px;
+      animation: sob 2s ease-in-out infinite;
+    }
+
+    @keyframes sob {
+      0%, 100% { transform: translateY(0); }
+      50% { transform: translateY(-4px); }
+    }
+
+    h1 {
+      font-family: 'Bebas Neue', Impact, sans-serif;
+      font-size: 22px;
+      letter-spacing: 3px;
+      color: #ff4444;
+      text-shadow: 0 0 20px rgba(255, 50, 50, 0.5);
+    }
+
+    .subtitle {
+      font-size: 11px;
+      color: #884444;
+      font-style: italic;
+      margin-top: 4px;
+    }
+
+    .body {
+      padding: 20px;
+    }
+
+    .stat-card {
+      background: #1a0a0a;
+      border: 1px solid #3d1010;
+      border-radius: 8px;
+      padding: 14px;
+      text-align: center;
+      margin-bottom: 16px;
+    }
+
+    .stat-number {
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 48px;
+      color: #ff3333;
+      line-height: 1;
+      text-shadow: 0 0 20px rgba(255,50,50,0.3);
+    }
+
+    .stat-label {
+      font-size: 11px;
+      color: #884444;
+      letter-spacing: 2px;
+      text-transform: uppercase;
+      margin-top: 4px;
+    }
+
+    .test-btn {
+      width: 100%;
+      background: linear-gradient(135deg, #3d0f0f, #1a0505);
+      border: 1px solid #ff3333;
+      color: #ff6666;
+      font-family: 'Bebas Neue', sans-serif;
+      font-size: 16px;
+      letter-spacing: 2px;
+      padding: 10px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      margin-bottom: 12px;
+    }
+
+    .test-btn:hover {
+      background: linear-gradient(135deg, #5a1a1a, #2d0808);
+      box-shadow: 0 0 15px rgba(255,50,50,0.2);
+      transform: translateY(-1px);
+    }
+
+    .test-btn:active {
+      transform: translateY(0);
+    }
+
+    .reset-btn {
+      width: 100%;
+      background: transparent;
+      border: 1px solid #3d1010;
+      color: #664444;
+      font-size: 11px;
+      padding: 8px;
+      border-radius: 6px;
+      cursor: pointer;
+      transition: all 0.2s;
+      font-family: 'Crimson Text', serif;
+      letter-spacing: 1px;
+    }
+
+    .reset-btn:hover {
+      border-color: #664444;
+      color: #884444;
+    }
+
+    .footer {
+      padding: 12px 20px;
+      border-top: 1px solid #1a0505;
+      font-size: 10px;
+      color: #442222;
+      text-align: center;
+      font-style: italic;
+    }
+
+    .status {
+      font-size: 11px;
+      color: #664444;
+      text-align: center;
+      margin-bottom: 14px;
+    }
+
+    .dot {
+      display: inline-block;
+      width: 6px;
+      height: 6px;
+      border-radius: 50%;
+      background: #33aa33;
+      margin-right: 4px;
+      animation: pulse 2s ease-in-out infinite;
+    }
+
+    @keyframes pulse {
+      0%, 100% { opacity: 1; }
+      50% { opacity: 0.3; }
+    }
+  </style>
+</head>
+<body>
+  <div class="header">
+    <span class="emoji">😭</span>
+    <h1>JOB REJECTION ALARM</h1>
+    <div class="subtitle">the sound of your hopes and dreams</div>
+  </div>
+
+  <div class="body">
+    <div class="stat-card">
+      <div class="stat-number" id="count">0</div>
+      <div class="stat-label">Rejections Detected</div>
+    </div>
+
+    <div class="status">
+      <span class="dot"></span>Actively monitoring your inbox
+    </div>
+
+    <button class="test-btn" id="testBtn">▶ PLAY FAAAAHHHHH</button>
+    <button class="reset-btn" id="resetBtn">Reset Counter</button>
+  </div>
+
+  <div class="footer">
+    Watching Gmail • Outlook • Yahoo Mail<br>
+    Stay strong. The right job is out there. 🌟
+  </div>
+
+  <script src="popup.js"></script>
+</body>
+</html>

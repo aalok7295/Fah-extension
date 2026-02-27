@@ -1,0 +1,41 @@
+{
+  "manifest_version": 3,
+  "name": "Job Rejection Alarm 😭",
+  "version": "1.0",
+  "description": "Plays FAAAAHHHHH when it detects a job rejection email. Because sometimes you need to feel it.",
+  "permissions": ["activeTab", "scripting", "storage"],
+  "host_permissions": [
+    "https://mail.google.com/*",
+    "https://outlook.live.com/*",
+    "https://outlook.office.com/*",
+    "https://outlook.office365.com/*",
+    "https://mail.yahoo.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://mail.google.com/*",
+        "https://outlook.live.com/*",
+        "https://outlook.office.com/*",
+        "https://outlook.office365.com/*",
+        "https://mail.yahoo.com/*"
+      ],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "16": "icon16.png",
+      "48": "icon48.png",
+      "128": "icon128.png"
+    }
+  },
+  "web_accessible_resources": [
+    {
+      "resources": ["sound.js"],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
